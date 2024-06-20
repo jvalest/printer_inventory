@@ -14,10 +14,10 @@ services:
       - ./db_data:/var/lib/mysql
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python my_printer_inventory/manage.py runserver 0.0.0.0:8000 
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./app/
     depends_on:
       - db
